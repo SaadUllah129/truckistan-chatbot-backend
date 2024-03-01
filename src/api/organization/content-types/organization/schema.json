@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "singularName": "organization",
+    "pluralName": "organizations",
+    "displayName": "Organization",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "email": {
+      "type": "string"
+    },
+    "contact_number": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "subscription": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subscription.subscription",
+      "inversedBy": "organizations"
+    },
+    "time_zone": {
+      "type": "string"
+    },
+    "website": {
+      "type": "text"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "organization"
+    }
+  }
+}
