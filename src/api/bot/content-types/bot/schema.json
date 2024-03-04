@@ -4,10 +4,11 @@
   "info": {
     "singularName": "bot",
     "pluralName": "bots",
-    "displayName": "Bot"
+    "displayName": "Bot",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

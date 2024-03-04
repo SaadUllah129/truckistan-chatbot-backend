@@ -802,9 +802,10 @@ export interface ApiBotBot extends Schema.CollectionType {
     singularName: 'bot';
     pluralName: 'bots';
     displayName: 'Bot';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
@@ -817,7 +818,6 @@ export interface ApiBotBot extends Schema.CollectionType {
     creator_id: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::bot.bot', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::bot.bot', 'oneToOne', 'admin::user'> &
@@ -834,7 +834,7 @@ export interface ApiOrganizationOrganization extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
@@ -856,7 +856,6 @@ export interface ApiOrganizationOrganization extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::organization.organization',
       'oneToOne',
@@ -878,9 +877,10 @@ export interface ApiSubscriptionSubscription extends Schema.CollectionType {
     singularName: 'subscription';
     pluralName: 'subscriptions';
     displayName: 'Subscription';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     start_date: Attribute.DateTime;
@@ -898,7 +898,6 @@ export interface ApiSubscriptionSubscription extends Schema.CollectionType {
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::subscription.subscription',
       'oneToOne',
